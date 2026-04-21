@@ -1,38 +1,81 @@
-# Base limpa de API em Node
+# Task API
 
-Este repositório serve exclusivamente para oferecer uma base rápida para criação de APIs em Node.
+API simples de gerenciamento de tarefas desenvolvida com Node.js, Express e TypeScript.
+O projeto implementa um CRUD completo com boas práticas de organização em camadas (controllers, services e routes) e validação de dados utilizando Zod.
 
-Ele possui apenas a configuração básica do Express com Typescript e o primeiro router.
+## Funcionalidades
+
+* Criar tarefa
+* Listar todas as tarefas
+* Buscar tarefa por ID
+* Atualizar tarefa
+* Remover tarefa
+
+## Estrutura do projeto
+
+```
+src/
+ ├── controllers/
+ ├── routes/
+ ├── services/
+ ├── schemas/
+ ├── data/
+ └── server.ts
+
+api/
+ └── index.ts
+```
+
+## Tecnologias utilizadas
+
+* Node.js
+* Express
+* TypeScript
+* Zod
 
 ## Instalação
-Você pode clonar o repositório e rodar:
-```bash
+
+Instale as dependências:
+
+```
 npm install
 ```
 
-Depois clonar o arquivo `.env.example` para `.env.local`:
-```bash
-cp .env.example .env.local
-```
-E alterar as variáveis de ambiente.
+## Execução
 
-## Uso
-Para rodar o projeto, utilize o comando padrão:
-```bash
+Para rodar o projeto em ambiente de desenvolvimento:
+
+```
 npm run dev
 ```
 
-## Adicionais
-Caso queira, é interessante remover o `origin` do repositório, para adicionar seu próprio repositório remoto e continuar o desenvolvimento.
+Ou em produção:
 
-Para ver os repositórios remotos:
-```bash
-git remote -v
+```
+npm run build
+npm start
 ```
 
-Para trocar o origin:
-```bash
-git remote remove origin
-git remote add origin <url>
-```
-Sendo `<url>` o diretório do seu repositório remoto."# CRUD-PDHC-NODE" 
+## Endpoints
+
+Base URL: `/tasks`
+
+* GET `/tasks`
+  Retorna todas as tarefas
+
+* GET `/tasks/:id`
+  Retorna uma tarefa específica
+
+* POST `/tasks`
+  Cria uma nova tarefa
+
+* PUT `/tasks/:id`
+  Atualiza uma tarefa existente
+
+* DELETE `/tasks/:id`
+  Remove uma tarefa
+
+## Observações
+
+* Os dados são armazenados localmente em memória ou arquivo JSON.
+* Este projeto tem fins acadêmicos e não utiliza banco de dados em produção.
