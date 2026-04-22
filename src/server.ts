@@ -3,6 +3,7 @@ import cors from 'cors';
 import helmet from 'helmet';
 
 import taskRoutes from './routes/tasksRoutes';
+import { mainRouter } from './routes/main';
 
 const server = express();
 
@@ -13,6 +14,7 @@ server.use(express.urlencoded({ extended: true }));
 server.disable('x-powered-by');
 
 server.use('/tasks', taskRoutes);
+server.use('/ping', mainRouter);
 
 server.get('/', (req, res) => {
     res.send('API is running 🚀');
