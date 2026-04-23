@@ -26,6 +26,12 @@ api/
  └── index.ts
 ```
 
+## API em produção
+
+A API está disponível publicamente no seguinte endpoint:
+
+https://crud-pdhc-node.vercel.app/tasks
+
 ## Tecnologias utilizadas
 
 * Node.js
